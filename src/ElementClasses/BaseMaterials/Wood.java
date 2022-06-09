@@ -1,0 +1,9 @@
+package ElementClasses.BaseMaterials;
+
+import ElementClasses.BaseMaterials.BaseMaterial;
+
+public class Wood extends BaseMaterial {
+    public Wood() {
+        super(2);
+    }
+}
