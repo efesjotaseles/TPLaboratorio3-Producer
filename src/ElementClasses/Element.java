@@ -14,4 +14,6 @@ public abstract class Element {
     public void setValue(int value) {
         this.value = value;
     }
+
+
 }
