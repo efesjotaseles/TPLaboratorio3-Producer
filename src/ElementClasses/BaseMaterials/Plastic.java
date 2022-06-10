@@ -10,4 +10,9 @@ public class Plastic extends BaseMaterial {
     public boolean equals(Object obj) {
         return (obj instanceof Plastic);
     }
+
+    @Override
+    public String toString() {
+        return "Plastic";
+    }
 }

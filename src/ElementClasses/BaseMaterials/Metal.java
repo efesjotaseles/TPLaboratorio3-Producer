@@ -10,4 +10,9 @@ public class Metal extends BaseMaterial {
     public boolean equals(Object obj) {
         return (obj instanceof Metal);
     }
+
+    @Override
+    public String toString() {
+        return "Metal";
+    }
 }
