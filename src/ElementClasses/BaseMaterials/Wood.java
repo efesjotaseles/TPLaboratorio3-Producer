@@ -13,6 +13,11 @@ public class Wood extends BaseMaterial {
     }
 
     @Override
+    public int hashCode() {
+        return 0;
+    }
+
+    @Override
     public String toString() {
         return "Wood";
     }

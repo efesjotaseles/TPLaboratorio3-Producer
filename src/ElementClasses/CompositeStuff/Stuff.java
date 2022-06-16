@@ -4,11 +4,10 @@ import ElementClasses.BaseMaterials.BaseMaterial;
 import ElementClasses.Element;
 
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+
 
 public class Stuff extends Element {
-    private Map<Element,Integer> composition;
+    private HashMap<Element,Integer> composition;
 
     public Stuff(int value) {
         super(value);
@@ -16,18 +15,20 @@ public class Stuff extends Element {
     }
 
     public void addBaseMaterial(BaseMaterial baseMaterial , int amount){
-        composition.merge(baseMaterial,(Integer)amount,Integer::sum);
+        //composition.merge(baseMaterial,(Integer)amount,Integer::sum);
+        if(!composition.containsKey(baseMaterial)){
+            composition.put(baseMaterial,amount);
+        }
+        else{
+            System.out.println(composition.get(baseMaterial));
+            amount += composition.get(baseMaterial);
+            composition.remove(baseMaterial);
+            composition.put(baseMaterial,amount);
+        }
     }
 
-    public String getComposition(){
-        StringBuilder message = new StringBuilder();
-        Iterator<Map.Entry<Element,Integer>> iterator = composition.entrySet().iterator();
-        while (iterator.hasNext()){
-            ???
-        }
-
-
-        return message.toString();
+    public HashMap<Element,Integer> getComposition(){
+        return composition;
     }
 
 
