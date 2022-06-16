@@ -31,5 +31,4 @@ public class Stuff extends Element {
         return composition;
     }
 
-
 }

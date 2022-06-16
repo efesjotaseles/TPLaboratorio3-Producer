@@ -15,5 +15,8 @@ public abstract class Element {
         this.value = value;
     }
 
-
+    @Override
+    public int hashCode() {
+        return 0;
+    }
 }
