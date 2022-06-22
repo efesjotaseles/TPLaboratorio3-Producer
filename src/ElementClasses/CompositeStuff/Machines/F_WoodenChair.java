@@ -6,8 +6,8 @@ import ElementClasses.CompositeStuff.Stuff;
 import ElementClasses.Element;
 import Interfaces.Fabricator;
 
-public class F_WoodenChair extends Stuff implements Fabricator {
-    public F_WoodenChair(int value) {
+public class F_WoodenChair extends Machine {
+    public F_WoodenChair() {
         super(50);
         composition.put(new Metal(),10);
     }
