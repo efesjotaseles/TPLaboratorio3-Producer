@@ -44,6 +44,9 @@ public class Player implements Fabricator, Trader {
 
     @Override
     public void buy(Element item, int cash) {
+        if(item instanceof Person){
+
+        }
 
     }
 

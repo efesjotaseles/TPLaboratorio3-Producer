@@ -6,22 +6,15 @@ import Interfaces.Fabricator;
 
 public class Worker extends Person implements Fabricator {
 
-    public Worker(String name) {
-        super(name);
-        this.setActionsLimit(1);
-    }
-
     public Worker() {
-        super();
+        super(30);
         this.setActionsLimit(1);
     }
 
     @Override
     public Element fabricate() {
-        try {
+        if(hasActions()){
             takeAction();
-        } catch (E_NoActionsLeft e) {
-            throw new RuntimeException(e);
         }
         return null;
     }

@@ -1,28 +1,16 @@
 package ElementClasses.Persons;
 
 import CustomExceptions.E_NoActionsLeft;
+import ElementClasses.Element;
 
-public abstract class Person {
-    private String name;
+public abstract class Person extends Element {
+    //private String name;
     private int actionsLimit;
     private int actionsTaken = 0;
 
-    public Person(String name) {
-        this.name = name;
+    public Person(int value) {
+        super(value);
         actionsLimit = 0;
-    }
-
-    public Person() {
-        name = "";
-        actionsLimit = 0;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getActionsLimit() {

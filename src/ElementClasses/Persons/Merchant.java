@@ -6,32 +6,23 @@ import Interfaces.Trader;
 
 public class Merchant extends Person implements Trader {
 
-    public Merchant(String name) {
-        super(name);
-        this.setActionsLimit(2);
-    }
-
     public Merchant() {
-        super();
+        super(20);
         this.setActionsLimit(2);
     }
 
     @Override
     public void buy(Element item, int cash) {
-        try {
+        if(hasActions()) {
             takeAction();
-        } catch (E_NoActionsLeft e) {
-            throw new RuntimeException(e);
         }
 
     }
 
     @Override
     public void sell(Element item, int cash) {
-        try {
+        if(hasActions()){
             takeAction();
-        } catch (E_NoActionsLeft e) {
-            throw new RuntimeException(e);
         }
 
     }
