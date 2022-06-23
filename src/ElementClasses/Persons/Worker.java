@@ -7,10 +7,12 @@ public class Worker extends Person implements Fabricator {
 
     public Worker(String name) {
         super(name);
+        this.setActionsLimit(1);
     }
 
     public Worker() {
         super();
+        this.setActionsLimit(1);
     }
 
     @Override

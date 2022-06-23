@@ -4,6 +4,8 @@ import ElementClasses.BaseMaterials.BaseMaterial;
 import ElementClasses.BaseMaterials.Metal;
 import ElementClasses.BaseMaterials.Plastic;
 import ElementClasses.BaseMaterials.Wood;
+import ElementClasses.CompositeStuff.Machines.F_MetalChair;
+import ElementClasses.CompositeStuff.Machines.F_WoodenChair;
 import ElementClasses.CompositeStuff.Machines.Machine;
 import ElementClasses.Element;
 import ElementClasses.Persons.Person;
@@ -42,6 +44,26 @@ public class Market implements Merchant {
                 break;
         }
         return baseMaterial;
+    }
+
+    private Machine randomMachine(){
+        Machine machine = null;
+        //If new Machines are added, increment the bound parameter on .nextInt()
+        switch (random.nextInt(0,2)){
+            case 0:
+                machine = new F_WoodenChair();
+                break;
+            case 1:
+                machine = new F_MetalChair();
+                break;
+        }
+        return machine;
+    }
+
+    private Person randomPerson(){
+        Person person = null;
+        //TODO switch for randomPerson
+        return person;
     }
 
     public void renewOffer(){
