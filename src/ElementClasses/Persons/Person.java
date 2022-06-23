@@ -1,5 +1,7 @@
 package ElementClasses.Persons;
 
+import CustomExceptions.E_NoActionsLeft;
+
 public abstract class Person {
     private String name;
     private int actionsLimit;
@@ -47,12 +49,12 @@ public abstract class Person {
         return actionsLeft()>0;
     }
 
-    public void takeAction(){
+    public void takeAction() throws E_NoActionsLeft {
         if(hasActions()){
             actionsTaken++;
         }
         else{
-            //TODO EXCEPTION NOACTIONSLEFT
+            throw new E_NoActionsLeft();
         }
     }
 }
