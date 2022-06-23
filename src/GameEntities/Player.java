@@ -15,12 +15,12 @@ public class Player implements Fabricator,Merchant {
     }
 
     @Override
-    public void buy() {
+    public void buy(Element item, int cash) {
 
     }
 
     @Override
-    public void sell() {
+    public void sell(Element item, int cash) {
 
     }
 }

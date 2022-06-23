@@ -5,6 +5,7 @@ import ElementClasses.BaseMaterials.Metal;
 import ElementClasses.BaseMaterials.Plastic;
 import ElementClasses.BaseMaterials.Wood;
 import ElementClasses.CompositeStuff.Machines.Machine;
+import ElementClasses.Element;
 import ElementClasses.Persons.Person;
 import Interfaces.Merchant;
 
@@ -51,12 +52,12 @@ public class Market implements Merchant {
     }
 
     @Override
-    public void buy() {
+    public void buy(Element item, int cash) {
 
     }
 
     @Override
-    public void sell() {
+    public void sell(Element item, int cash) {
 
     }
 }
