@@ -46,4 +46,13 @@ public abstract class Person {
     public boolean hasActions(){
         return actionsLeft()>0;
     }
+
+    public void takeAction(){
+        if(hasActions()){
+            actionsTaken++;
+        }
+        else{
+            //TODO EXCEPTION NOACTIONSLEFT
+        }
+    }
 }
