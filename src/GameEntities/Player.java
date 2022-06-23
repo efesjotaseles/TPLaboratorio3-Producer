@@ -2,9 +2,9 @@ package GameEntities;
 
 import ElementClasses.Element;
 import Interfaces.Fabricator;
-import Interfaces.Merchant;
+import Interfaces.Trader;
 
-public class Player implements Fabricator,Merchant {
+public class Player implements Fabricator, Trader {
 
     public Player() {
     }

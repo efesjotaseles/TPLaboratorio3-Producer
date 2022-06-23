@@ -9,11 +9,11 @@ import ElementClasses.CompositeStuff.Machines.F_WoodenChair;
 import ElementClasses.CompositeStuff.Machines.Machine;
 import ElementClasses.Element;
 import ElementClasses.Persons.Person;
-import Interfaces.Merchant;
+import Interfaces.Trader;
 
 import java.util.Random;
 
-public class Market implements Merchant {
+public class Market implements Trader {
     private Random random;
     //The next variables are the items available to purchase.
     private BaseMaterial materialA;
