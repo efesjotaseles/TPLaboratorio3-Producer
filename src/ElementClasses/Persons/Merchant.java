@@ -28,6 +28,11 @@ public class Merchant extends Person implements Trader {
 
     @Override
     public void sell(Element item, int cash) {
+        try {
+            takeAction();
+        } catch (E_NoActionsLeft e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }

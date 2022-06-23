@@ -1,5 +1,6 @@
 package ElementClasses.Persons;
 
+import CustomExceptions.E_NoActionsLeft;
 import ElementClasses.Element;
 import Interfaces.Fabricator;
 
@@ -17,6 +18,11 @@ public class Worker extends Person implements Fabricator {
 
     @Override
     public Element fabricate() {
+        try {
+            takeAction();
+        } catch (E_NoActionsLeft e) {
+            throw new RuntimeException(e);
+        }
         return null;
     }
 }
