@@ -58,20 +58,31 @@ public class Crew implements Fabricator,Trader{
     public Element fabricate() {
         boolean done = false;
         for (Person p:persons) {
-            if(p instanceof Fabricator && p.hasActions()){
+            if(p instanceof Fabricator && p.hasActions() && !done){
                 p.takeAction();
+                done = true;
             }
         }
         return null;
     }
 
+    private void trade(){
+        boolean done = false;
+        for (Person p:persons) {
+            if(p instanceof Trader && p.hasActions() && !done){
+                p.takeAction();
+                done = true;
+            }
+        }
+    }
+
     @Override
     public void buy(Element item, int cash) {
-
+        trade();
     }
 
     @Override
     public void sell(Element item, int cash) {
-
+        trade();
     }
 }
