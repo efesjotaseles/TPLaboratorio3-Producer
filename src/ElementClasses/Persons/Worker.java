@@ -9,6 +9,10 @@ public class Worker extends Person implements Fabricator {
         super(name);
     }
 
+    public Worker() {
+        super();
+    }
+
     @Override
     public Element fabricate() {
         return null;

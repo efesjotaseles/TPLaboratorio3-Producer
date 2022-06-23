@@ -6,6 +6,9 @@ import Interfaces.Merchant;
 
 public class Player implements Fabricator,Merchant {
 
+    public Player() {
+    }
+
     @Override
     public Element fabricate() {
         return null;
