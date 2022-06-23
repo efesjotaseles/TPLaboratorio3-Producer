@@ -13,14 +13,14 @@ import java.util.HashMap;
 
 public class Player implements Fabricator, Trader {
 
-    private ArrayList<Person> crew;
+    private Crew crew;
     private ArrayList<Machine> machines;
     private ArrayList<Stuff> stuff;
     private HashMap<BaseMaterial,Integer> baseMaterials;
     private int cash;
 
     public Player() {
-        crew = new ArrayList<Person>();
+        crew = new Crew();
         machines = new ArrayList<Machine>();
         stuff = new ArrayList<Stuff>();
         baseMaterials = new HashMap<BaseMaterial,Integer>();
@@ -55,4 +55,6 @@ public class Player implements Fabricator, Trader {
     public void deployMachine(){
         //Moves a Machine from the Stuff collection to the Machines collection
     }
+
+
 }

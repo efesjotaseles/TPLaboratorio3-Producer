@@ -19,4 +19,36 @@ public class GameState {
         dueDay = -1;
         goalCash = -1;
     }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public int getCurrentDay() {
+        return currentDay;
+    }
+
+    public void setCurrentDay(int currentDay) {
+        this.currentDay = currentDay;
+    }
+
+    public int getDueDay() {
+        return dueDay;
+    }
+
+    public void setDueDay(int dueDay) {
+        this.dueDay = dueDay;
+    }
+
+    public int getGoalCash() {
+        return goalCash;
+    }
+
+    public void setGoalCash(int goalCash) {
+        this.goalCash = goalCash;
+    }
 }
