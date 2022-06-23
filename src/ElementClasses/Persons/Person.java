@@ -49,12 +49,9 @@ public abstract class Person {
         return actionsLeft()>0;
     }
 
-    public void takeAction() throws E_NoActionsLeft {
-        if(hasActions()){
+    public void takeAction() {
+        if (hasActions()) {
             actionsTaken++;
-        }
-        else{
-            throw new E_NoActionsLeft();
         }
     }
 }

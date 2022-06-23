@@ -56,7 +56,12 @@ public class Crew implements Fabricator,Trader{
 
     @Override
     public Element fabricate() {
-        
+        boolean done = false;
+        for (Person p:persons) {
+            if(p instanceof Fabricator && p.hasActions()){
+                p.takeAction();
+            }
+        }
         return null;
     }
 
