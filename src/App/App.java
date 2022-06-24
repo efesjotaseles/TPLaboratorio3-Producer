@@ -3,6 +3,7 @@ package App;
 
 //import ElementClasses.BaseMaterials.Metal;
 
+import Console.Console;
 import ElementClasses.BaseMaterials.BaseMaterial;
 
 import java.lang.reflect.InvocationTargetException;
@@ -11,6 +12,8 @@ public class App {
     public static void main(String[] args) {
 
         System.out.println("Hello world!");
+
+        Console.info(new int[]{10, 20, 1, 30});
 
         Class c;
         Object o;
@@ -26,6 +29,7 @@ public class App {
         }
          */
 
+        /*
         try {
             c = Class.forName("ElementClasses.BaseMaterials.Metal");
             o = c.getDeclaredConstructor().newInstance();
@@ -41,8 +45,9 @@ public class App {
         } catch (NoSuchMethodException e) {
             throw new RuntimeException(e);
         }
+         */
 
-        System.out.println(baseMaterial.toString());
+        //System.out.println(baseMaterial.toString());
 
 
 

@@ -14,6 +14,12 @@ public class Crew implements Fabricator,Trader{
         persons = new ArrayList<Person>();
     }
 
+    public void addPerson(Person person){
+        persons.add(person);
+    }
+
+    //removePerson
+
     public int getFabricatorActionsLimit(){
         int actionsLimit = 0;
         for (Person p:persons) {

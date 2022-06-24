@@ -44,15 +44,23 @@ public class Player implements Fabricator, Trader {
 
     @Override
     public void buy(Element item, int cash) {
+        this.cash -= cash;
         if(item instanceof Person){
-
+            crew.addPerson((Person) item);
+        }
+        else if(item instanceof Machine){
+            //TODO add item to machines, wrapper????
+        }
+        else if(item instanceof Stuff){
+            stuff.add((Stuff)item);
         }
 
     }
 
     @Override
     public void sell(Element item, int cash) {
-
+        this.cash += cash;
+        //TODO REMOVE ITEM FROM ATTRIBUTES
     }
 
     public void deployMachine(){

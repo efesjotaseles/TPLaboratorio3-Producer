@@ -51,4 +51,8 @@ public class GameState {
     public void setGoalCash(int goalCash) {
         this.goalCash = goalCash;
     }
+
+    public int[] info(){
+        return new int[]{getCurrentDay(),getDueDay(),player.getCash(),getGoalCash()};
+    }
 }
