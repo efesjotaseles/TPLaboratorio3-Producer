@@ -12,7 +12,7 @@ public class App {
         System.out.println("Hello world!");
 
         
-        PrintConsole.info(new int[]{10, 20, 1, 30});
+        PrintConsole.dailyInfo(new int[]{10, 20, 1, 30});
 
         Class c;
         Object o;

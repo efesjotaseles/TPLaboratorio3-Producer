@@ -1,5 +1,7 @@
 package Console;
 
+import ElementClasses.Element;
+
 import java.util.ArrayList;
 
 public class PrintConsole {
@@ -16,20 +18,20 @@ public class PrintConsole {
         divScreen();
     }
 
-    public static void info(int[] data){
-        System.out.println("Day: " + data[0] + " | Due Day: " + data[1]);
-        System.out.println("Cash: " + data[2] + " | Goal: " + data[3]);
+    public static void dailyInfo(int[] info){
+        System.out.println("Day: " + info[0] + " | Due Day: " + info[1]);
+        System.out.println("Cash: " + info[2] + " | Goal: " + info[3]);
 
     }
 
     /**
      *
-     * @param data [currentDay, dueDay, currentCash, goalCash]
+     * @param info [currentDay, dueDay, currentCash, goalCash]
      * @param actions [tradeActionsTaken, tradeActionsLimit, fabricateActionsTaken, fabricateActionsLimit]
      */
-    public static void dailyMenu(int[] data, int[]actions){
+    public static void dailyMenu(int[] info, int[]actions){
         divScreen();
-        info(data);
+        dailyInfo(info);
         divScreen();
         System.out.println("1) Market (" + actions[0] + "/" + actions[1] + ")");
         System.out.println("2) Fabricate (" + actions[2] + "/" + actions[3] + ")");
@@ -40,9 +42,9 @@ public class PrintConsole {
         divScreen();
     }
 
-    public static void marketMenu(int[] data){
+    public static void marketMenu(int[] info){
         divScreen();
-        info(data);
+        dailyInfo(info);
         divScreen();
         System.out.println("1) Buy...");
         System.out.println("2) Sell...");
@@ -51,24 +53,31 @@ public class PrintConsole {
 
     /**
      *
-     * @param data [currentDay, dueDay, currentCash, goalCash]
+     * @param info [currentDay, dueDay, currentCash, goalCash]
      * @param offer
      */
-    public static void marketBuyMenu(int[] data, ArrayList<String>offer){
+    public static void marketBuyMenu(int[] info, Element[] offer){
         divScreen();
-        info(data);
+        dailyInfo(info);
         divScreen();
-        System.out.println("1) " + offer.get(0));
-        System.out.println("2) " + offer.get(1));
-        System.out.println("3) " + offer.get(2));
-        System.out.println("4) " + offer.get(3));
+        String[] names = new String[4];
+        int[] values = new int[4];
+        for(int i=0;i<4;i++){
+            names[i] = offer[i].toString();
+            values[i] = offer[i].getValue();
+        }
+        int choice;
+        for (int i=0;i<4;i++){
+            choice = i+1;
+            System.out.println(choice + ") " + names[i] + " ($ " + values[i]);
+        }
         System.out.println("0) Go back");
         divScreen();
     }
 
-    public static void marketSellMenu(int[] data){
+    public static void marketSellMenu(int[] info){
         divScreen();
-        info(data);
+        dailyInfo(info);
         divScreen();
         System.out.println("1) Sell every item (except base materials)");
         System.out.println("0) Go back");

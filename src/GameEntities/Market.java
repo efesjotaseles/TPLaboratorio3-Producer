@@ -19,6 +19,7 @@ import java.util.Random;
 public class Market implements Trader {
     private Random random;
     //The next variables are the items available to purchase.
+    //Consider a wrap collection class (Offer?) to share complete info
     private BaseMaterial materialA;
     private BaseMaterial materialB;
     private Machine machine;
@@ -62,6 +63,10 @@ public class Market implements Trader {
 
     public void setPerson(Person person) {
         this.person = person;
+    }
+
+    public Element[] getOffer(){
+        return new Element[]{materialA,materialB,machine,person};
     }
 
     private BaseMaterial randomBaseMaterial() {
