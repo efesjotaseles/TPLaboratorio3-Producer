@@ -19,10 +19,23 @@ public class Console {
 
     }
 
-    public static void dailyMenu(int[] data){
+    /**
+     *
+     * @param data [currentDay, dueDay, currentCash, goalCash]
+     * @param tradeActions [actionsTaken, actionsLimit]
+     * @param fabricateActions [actionsTaken, actionsLimit]
+     */
+    public static void dailyMenu(int[] data, int[]tradeActions, int[] fabricateActions){
         divScreen();
         info(data);
-        System.out.println();
+        System.out.println("1) Market (" + tradeActions[0] + "/" + tradeActions[1] + ")");
+        System.out.println("2) Fabricate (" + fabricateActions[0] + "/" + fabricateActions[1] + ")");
+        System.out.println("3) Manage Machines");
+        System.out.println("4) End the day");
+        System.out.println("5) Pay debt!");
+        System.out.println("0) Save & Close");
     }
+
+    public static void marketMenu()
 
 }

@@ -13,6 +13,7 @@ public class App {
 
         System.out.println("Hello world!");
 
+        
         Console.info(new int[]{10, 20, 1, 30});
 
         Class c;
