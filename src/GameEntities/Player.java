@@ -35,6 +35,10 @@ public class Player implements Fabricator, Trader {
         this.cash = cash;
     }
 
+    public int[] getActions(){
+        return crew.getActions();
+    }
+
 
 
     @Override

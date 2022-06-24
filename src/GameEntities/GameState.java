@@ -52,7 +52,11 @@ public class GameState {
         this.goalCash = goalCash;
     }
 
-    public int[] info(){
+    public int[] getDailyInfo(){
         return new int[]{getCurrentDay(),getDueDay(),player.getCash(),getGoalCash()};
+    }
+
+    public int[] getActions(){
+        return player.getActions();
     }
 }

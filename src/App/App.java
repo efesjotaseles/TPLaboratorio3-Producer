@@ -3,10 +3,8 @@ package App;
 
 //import ElementClasses.BaseMaterials.Metal;
 
-import Console.Console;
+import Console.PrintConsole;
 import ElementClasses.BaseMaterials.BaseMaterial;
-
-import java.lang.reflect.InvocationTargetException;
 
 public class App {
     public static void main(String[] args) {
@@ -14,7 +12,7 @@ public class App {
         System.out.println("Hello world!");
 
         
-        Console.info(new int[]{10, 20, 1, 30});
+        PrintConsole.info(new int[]{10, 20, 1, 30});
 
         Class c;
         Object o;

@@ -60,6 +60,10 @@ public class Crew implements Fabricator,Trader{
         return actionsTaken;
     }
 
+    public int[] getActions(){
+        return new int[]{getTraderActionsTaken(), getTraderActionsLimit(),getFabricatorActionsTaken(),getFabricatorActionsLimit()};
+    }
+
     @Override
     public Element fabricate() {
         boolean done = false;

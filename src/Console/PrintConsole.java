@@ -2,16 +2,17 @@ package Console;
 
 import java.util.ArrayList;
 
-public class Console {
+public class PrintConsole {
 
     private static void divScreen(){
         System.out.println("--------------------------------------------------");
     }
 
-    public static void mainMenu(){
+    public static void initMenu(){
         divScreen();
         System.out.println("1) Continue Game");
         System.out.println("2) Start New Game");
+        System.out.println("0) Exit");
         divScreen();
     }
 
@@ -24,15 +25,14 @@ public class Console {
     /**
      *
      * @param data [currentDay, dueDay, currentCash, goalCash]
-     * @param tradeActions [actionsTaken, actionsLimit]
-     * @param fabricateActions [actionsTaken, actionsLimit]
+     * @param actions [tradeActionsTaken, tradeActionsLimit, fabricateActionsTaken, fabricateActionsLimit]
      */
-    public static void dailyMenu(int[] data, int[]tradeActions, int[] fabricateActions){
+    public static void dailyMenu(int[] data, int[]actions){
         divScreen();
         info(data);
         divScreen();
-        System.out.println("1) Market (" + tradeActions[0] + "/" + tradeActions[1] + ")");
-        System.out.println("2) Fabricate (" + fabricateActions[0] + "/" + fabricateActions[1] + ")");
+        System.out.println("1) Market (" + actions[0] + "/" + actions[1] + ")");
+        System.out.println("2) Fabricate (" + actions[2] + "/" + actions[3] + ")");
         System.out.println("3) Manage Machines");
         System.out.println("4) End the day");
         System.out.println("5) Pay debt!");
@@ -70,7 +70,7 @@ public class Console {
         divScreen();
         info(data);
         divScreen();
-        System.out.println("");
+        System.out.println("1) Sell every item (except base materials)");
         System.out.println("0) Go back");
     }
 
