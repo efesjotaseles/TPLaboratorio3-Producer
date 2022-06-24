@@ -63,8 +63,14 @@ public class PrintConsole {
         String[] names = new String[4];
         int[] values = new int[4];
         for(int i=0;i<4;i++){
-            names[i] = offer[i].toString();
-            values[i] = offer[i].getValue();
+            if(offer[i] != null) {
+                names[i] = offer[i].toString();
+                values[i] = offer[i].getValue();
+            }
+            else{
+                names[i] = "** no item **";
+                values[i] = 0;
+            }
         }
         int choice;
         for (int i=0;i<4;i++){
@@ -73,6 +79,15 @@ public class PrintConsole {
         }
         System.out.println("0) Go back");
         divScreen();
+    }
+
+    public static void itemPurchased(int[] info, Element item){
+        divScreen();
+        dailyInfo(info);
+        divScreen();
+        System.out.println(item.toString() + "purchased!");
+        divScreen();
+
     }
 
     public static void marketSellMenu(int[] info){

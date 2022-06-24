@@ -5,14 +5,15 @@ package App;
 
 import Console.PrintConsole;
 import ElementClasses.BaseMaterials.BaseMaterial;
+import ElementClasses.BaseMaterials.Metal;
+import ElementClasses.CompositeStuff.Furniture.MetalChair;
+import ElementClasses.Element;
 
 public class App {
     public static void main(String[] args) {
 
         System.out.println("Hello world!");
 
-        
-        PrintConsole.dailyInfo(new int[]{10, 20, 1, 30});
 
         Class c;
         Object o;

@@ -82,6 +82,14 @@ public class Game {
     }
 
     public void marketBuyGame(GameState gameState){
+        int choice = -1;
+        PrintConsole.marketBuyMenu(gameState.getDailyInfo(), market.getOffer());
+        choice = scanner.nextInt();
+        switch (choice){
+            case 1:
+                //TODO buy/sell operations
+
+        }
 
     }
 
