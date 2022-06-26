@@ -100,13 +100,31 @@ public class Game {
                 case 1:
                     if(market.getMaterialA() != null){
                         if(confirmBuyChoice(gameState,market.getMaterialA())){
-                            //TODO buy/sell operation
-                            gameState.
+                            gameState.tradeOperation(market,gameState.getPlayer(),market.getMaterialA());
                         }
                     }
                     break;
-
-
+                case 2:
+                    if(market.getMaterialB() != null){
+                        if(confirmBuyChoice(gameState,market.getMaterialB())){
+                            gameState.tradeOperation(market,gameState.getPlayer(),market.getMaterialB());
+                        }
+                    }
+                    break;
+                case 3:
+                    if(market.getMachine() != null){
+                        if(confirmBuyChoice(gameState,market.getMachine())){
+                            gameState.tradeOperation(market,gameState.getPlayer(),market.getMachine());
+                        }
+                    }
+                    break;
+                case 4:
+                    if(market.getPerson() != null){
+                        if(confirmBuyChoice(gameState,market.getPerson())){
+                            gameState.tradeOperation(market,gameState.getPlayer(),market.getPerson());
+                        }
+                    }
+                    break;
             }
             if(choice != 0){
                 choice = -1;
