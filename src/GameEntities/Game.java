@@ -31,6 +31,9 @@ public class Game {
                     break;
 
             }
+            if(choice != 0){
+                choice = -1;
+            }
         }
     }
 
@@ -59,6 +62,9 @@ public class Game {
                     //Save gameState into JSON, and exit loop
                     break;
             }
+            if (choice != 0){
+                choice = -1;
+            }
         }
     }
 
@@ -78,18 +84,31 @@ public class Game {
                     //GOES BACK
                     break;
             }
+            if(choice != 0) {
+                choice=-1;
+            }
         }
     }
 
     public void marketBuyGame(GameState gameState){
         int choice = -1;
-        PrintConsole.marketBuyMenu(gameState.getDailyInfo(), market.getOffer());
-        choice = scanner.nextInt();
-        switch (choice){
-            case 1:
-                //TODO buy/sell operations
+        while (choice != 0){
+            PrintConsole.marketBuyMenu(gameState.getDailyInfo(), market.getOffer());
+            choice = scanner.nextInt();
+            switch (choice){
+                case 1:
+                    //TODO buy/sell operations
+                    //Then...
+                    choice = -1;
+                    break;
 
+
+            }
+            if(choice != 0){
+                choice = -1;
+            }
         }
+
 
     }
 
