@@ -45,7 +45,7 @@ public class Game {
             choice = scanner.nextInt();
             switch (choice){
                 case 1:
-                    //Market
+                    marketGame(gameState);
                     break;
                 case 2:
                     //Fabricate
@@ -76,7 +76,7 @@ public class Game {
             choice = scanner.nextInt();
             switch (choice){
                 case 1:
-                    //Buy menu
+                    marketBuyGame(gameState);
                     break;
                 case 2:
                     //Sell menu
@@ -167,6 +167,10 @@ public class Game {
             }
         }
         return response;
+    }
+
+    public void marketSellGame(GameState gameState){
+
     }
 
 
