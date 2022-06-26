@@ -1,5 +1,8 @@
 package GameEntities;
 
+import ElementClasses.Element;
+import Interfaces.Trader;
+
 public class GameState {
     private Player player;
     private int currentDay;
@@ -58,5 +61,19 @@ public class GameState {
 
     public int[] getActions(){
         return player.getActions();
+    }
+
+    public void tradeOperation(Trader buyer , Trader seller, Element item){
+        Element copy = null;
+        try {
+            copy = (Element)item.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException(e);
+        }
+        if(copy != null){
+            buyer.buy(copy,copy.getValue());
+            seller.sell(item, item.getValue());
+        }
+
     }
 }

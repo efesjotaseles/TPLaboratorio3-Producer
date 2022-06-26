@@ -123,12 +123,22 @@ public class Market implements Trader {
 
     @Override
     public void buy(Element item, int cash) {
-
+        //HAS NO EFFECT
     }
 
     @Override
     public void sell(Element item, int cash) {
-
+        if(item.equals(materialA)){
+            materialA = null;
+        } else if (item.equals(materialB)) {
+            materialB = null;
+        }
+        else if(item.equals(machine)){
+            machine = null;
+        }
+        else if(item.equals(person)){
+            person = null;
+        }
     }
 
     public ArrayList<String> offerToString() {

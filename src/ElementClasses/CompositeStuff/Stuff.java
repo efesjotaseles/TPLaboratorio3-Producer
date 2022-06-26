@@ -6,7 +6,7 @@ import ElementClasses.Element;
 import java.util.HashMap;
 
 
-public class Stuff extends Element {
+public abstract class Stuff extends Element implements Cloneable{
     protected HashMap<Element,Integer> composition;
 
     public Stuff(int value) {
@@ -31,4 +31,8 @@ public class Stuff extends Element {
         return composition;
     }
 
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }

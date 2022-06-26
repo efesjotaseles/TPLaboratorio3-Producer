@@ -98,9 +98,12 @@ public class Game {
             choice = scanner.nextInt();
             switch (choice){
                 case 1:
-                    //TODO buy/sell operations
-                    //Then...
-                    choice = -1;
+                    if(market.getMaterialA() != null){
+                        if(confirmBuyChoice(gameState,market.getMaterialA())){
+                            //TODO buy/sell operation
+                            gameState.
+                        }
+                    }
                     break;
 
 

@@ -3,7 +3,7 @@ package ElementClasses.Persons;
 import CustomExceptions.E_NoActionsLeft;
 import ElementClasses.Element;
 
-public abstract class Person extends Element {
+public abstract class Person extends Element implements Cloneable{
     //private String name;
     private int actionsLimit;
     private int actionsTaken = 0;
@@ -41,5 +41,10 @@ public abstract class Person extends Element {
         if (hasActions()) {
             actionsTaken++;
         }
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

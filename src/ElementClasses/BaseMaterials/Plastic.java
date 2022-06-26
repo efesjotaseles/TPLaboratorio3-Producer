@@ -1,6 +1,6 @@
 package ElementClasses.BaseMaterials;
 
-public class Plastic extends BaseMaterial {
+public class Plastic extends BaseMaterial implements Cloneable{
 
     public Plastic() {
         super(3);
@@ -12,7 +12,14 @@ public class Plastic extends BaseMaterial {
     }
 
     @Override
+    public Object clone() throws CloneNotSupportedException {
+        return new Plastic();
+    }
+
+    @Override
     public String toString() {
         return "Plastic";
     }
+
+
 }

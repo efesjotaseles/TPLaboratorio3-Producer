@@ -4,7 +4,7 @@ import CustomExceptions.E_NoActionsLeft;
 import ElementClasses.Element;
 import Interfaces.Trader;
 
-public class Merchant extends Person implements Trader {
+public class Merchant extends Person implements Trader, Cloneable{
 
     public Merchant() {
         super(20);
@@ -25,5 +25,10 @@ public class Merchant extends Person implements Trader {
             takeAction();
         }
 
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return new Merchant();
     }
 }

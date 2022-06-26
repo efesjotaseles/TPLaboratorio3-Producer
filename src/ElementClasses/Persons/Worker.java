@@ -4,7 +4,7 @@ import CustomExceptions.E_NoActionsLeft;
 import ElementClasses.Element;
 import Interfaces.Fabricator;
 
-public class Worker extends Person implements Fabricator {
+public class Worker extends Person implements Fabricator, Cloneable{
 
     public Worker() {
         super(30);
@@ -17,5 +17,10 @@ public class Worker extends Person implements Fabricator {
             takeAction();
         }
         return null;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return new Worker();
     }
 }

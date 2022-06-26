@@ -2,7 +2,7 @@ package ElementClasses.BaseMaterials;
 
 import ElementClasses.BaseMaterials.BaseMaterial;
 
-public class Wood extends BaseMaterial {
+public class Wood extends BaseMaterial implements Cloneable{
     public Wood() {
         super(1);
     }
@@ -13,7 +13,14 @@ public class Wood extends BaseMaterial {
     }
 
     @Override
+    public Object clone() throws CloneNotSupportedException {
+        return new Wood();
+    }
+
+    @Override
     public String toString() {
         return "Wood";
     }
+
+
 }
