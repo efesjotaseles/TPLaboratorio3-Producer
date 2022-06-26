@@ -100,27 +100,42 @@ public class Game {
                 case 1:
                     if(market.getMaterialA() != null){
                         if(confirmBuyChoice(gameState,market.getMaterialA())){
+                            //As is now, it prints the daily info previous to perform the purchase.
+                            //TODO Perform the itemPurchased() with the updated info
+                            PrintConsole.itemPurchased(gameState.getDailyInfo(),market.getMaterialA());
                             gameState.tradeOperation(market,gameState.getPlayer(),market.getMaterialA());
                         }
                     }
                     break;
+
                 case 2:
                     if(market.getMaterialB() != null){
                         if(confirmBuyChoice(gameState,market.getMaterialB())){
+                            //As is now, it prints the daily info previous to perform the purchase.
+                            //TODO Perform the itemPurchased() with the updated info
+                            PrintConsole.itemPurchased(gameState.getDailyInfo(), market.getMaterialB());
                             gameState.tradeOperation(market,gameState.getPlayer(),market.getMaterialB());
                         }
                     }
                     break;
+
                 case 3:
                     if(market.getMachine() != null){
                         if(confirmBuyChoice(gameState,market.getMachine())){
+                            //As is now, it prints the daily info previous to perform the purchase.
+                            //TODO Perform the itemPurchased() with the updated info
+                            PrintConsole.itemPurchased(gameState.getDailyInfo(), market.getMachine());
                             gameState.tradeOperation(market,gameState.getPlayer(),market.getMachine());
                         }
                     }
                     break;
+
                 case 4:
                     if(market.getPerson() != null){
                         if(confirmBuyChoice(gameState,market.getPerson())){
+                            //As is now, it prints the daily info previous to perform the purchase.
+                            //TODO Perform the itemPurchased() with the updated info
+                            PrintConsole.itemPurchased(gameState.getDailyInfo(), market.getPerson());
                             gameState.tradeOperation(market,gameState.getPlayer(),market.getPerson());
                         }
                     }
