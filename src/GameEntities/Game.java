@@ -1,6 +1,7 @@
 package GameEntities;
 
 import Console.PrintConsole;
+import ElementClasses.Element;
 
 import java.util.Scanner;
 
@@ -110,6 +111,26 @@ public class Game {
         }
 
 
+    }
+
+    /**
+     *
+     * @return true if user confirms choice
+     */
+    private boolean confirmBuyChoice(GameState gameState, Element chosenElement){
+        int choice = -1;
+        boolean response = false;
+        while (choice == -1){
+            PrintConsole.buyConfirmation(gameState.getDailyInfo(), chosenElement);
+            choice = scanner.nextInt();
+            if (choice == 1){
+                response = true;
+            }
+            else if(choice != 0){
+                choice = -1;
+            }
+        }
+        return response;
     }
 
 

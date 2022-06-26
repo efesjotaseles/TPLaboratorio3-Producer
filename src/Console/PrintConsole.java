@@ -81,6 +81,17 @@ public class PrintConsole {
         divScreen();
     }
 
+    public static void buyConfirmation(int[] info , Element item){
+        divScreen();
+        dailyInfo(info);
+        divScreen();
+        System.out.println("Sure to buy " + item.toString() + "?");
+        System.out.println("Value: $" + item.getValue());
+        System.out.println("1) YES!");
+        System.out.println("0) No");
+        divScreen();
+    }
+
     public static void itemPurchased(int[] info, Element item){
         divScreen();
         dailyInfo(info);
