@@ -6,7 +6,7 @@ import ElementClasses.CompositeStuff.Stuff;
 public class MetalChair extends Stuff implements Cloneable{
     public MetalChair() {
         super(30);
-        composition.put(new Metal(),4);
+        composition.replace(new Metal(),4);
     }
 
     @Override

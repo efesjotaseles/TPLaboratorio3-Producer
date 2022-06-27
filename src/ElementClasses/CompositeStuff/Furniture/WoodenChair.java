@@ -6,7 +6,7 @@ import ElementClasses.CompositeStuff.Stuff;
 public class WoodenChair extends Stuff implements Cloneable{
     public WoodenChair() {
         super(8);
-        composition.put(new Wood(),4);
+        composition.replace(new Wood(),4);
     }
 
     @Override
