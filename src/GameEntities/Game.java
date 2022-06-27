@@ -170,6 +170,16 @@ public class Game {
     }
 
     public void marketSellGame(GameState gameState){
+        //For simplicity sake, for now the options will be to sell every stuff on inventory
+        /*
+        In each case, the total value of the item should be shown
+        1) Sell all your production
+        2) Sell all your base materials
+        3) Sell all your machines
+        After selecting the option, a confirmation should be shown
+
+        0) Go back
+         */
 
     }
 

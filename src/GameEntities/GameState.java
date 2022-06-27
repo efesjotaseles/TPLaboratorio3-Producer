@@ -76,4 +76,19 @@ public class GameState {
         }
 
     }
+
+    public int playerStuffValue(){
+        return player.getStuffValue();
+    }
+
+    public int playerBMaterialsValue(){
+        return player.getBMaterialsValue();
+    }
+
+    public int playerMachinesValue(){
+        return player.getMachinesValue();
+    }
+
+
+
 }
