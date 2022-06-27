@@ -1,6 +1,7 @@
 package App;
 
 
+
 //import ElementClasses.BaseMaterials.Metal;
 
 import Console.PrintConsole;
@@ -8,11 +9,16 @@ import ElementClasses.BaseMaterials.BaseMaterial;
 import ElementClasses.BaseMaterials.Metal;
 import ElementClasses.CompositeStuff.Furniture.MetalChair;
 import ElementClasses.Element;
+import GameEntities.Game;
 
 public class App {
     public static void main(String[] args) {
 
         System.out.println("Hello world!");
+        Game game = new Game();
+        game.initGame();
+
+
 
 
         Class c;

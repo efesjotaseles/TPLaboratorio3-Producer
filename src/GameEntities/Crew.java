@@ -1,5 +1,6 @@
 package GameEntities;
 
+import ElementClasses.CompositeStuff.Stuff;
 import ElementClasses.Element;
 import ElementClasses.Persons.Person;
 import Interfaces.Fabricator;
@@ -64,8 +65,12 @@ public class Crew implements Fabricator,Trader{
         return new int[]{getTraderActionsTaken(), getTraderActionsLimit(),getFabricatorActionsTaken(),getFabricatorActionsLimit()};
     }
 
+    public boolean canFabricate(){
+        return getFabricatorActionsTaken()<getFabricatorActionsLimit();
+    }
+
     @Override
-    public Element fabricate() {
+    public Stuff fabricate(int option) {
         boolean done = false;
         for (Person p:persons) {
             if(p instanceof Fabricator && p.hasActions() && !done){

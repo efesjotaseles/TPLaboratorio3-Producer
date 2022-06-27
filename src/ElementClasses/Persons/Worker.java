@@ -1,6 +1,7 @@
 package ElementClasses.Persons;
 
 import CustomExceptions.E_NoActionsLeft;
+import ElementClasses.CompositeStuff.Stuff;
 import ElementClasses.Element;
 import Interfaces.Fabricator;
 
@@ -12,7 +13,7 @@ public class Worker extends Person implements Fabricator, Cloneable{
     }
 
     @Override
-    public Element fabricate() {
+    public Stuff fabricate(int opcion) {
         if(hasActions()){
             takeAction();
         }

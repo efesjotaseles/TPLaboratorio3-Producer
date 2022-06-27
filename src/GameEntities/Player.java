@@ -53,7 +53,11 @@ public class Player implements Fabricator, Trader {
 
     @Override
     public Stuff fabricate(int option) {
-        stuff.add(machines.get(option).fabricate(0));
+        if(crew.canFabricate()){
+            stuff.add(machines.get(option).fabricate(0));
+            crew.fabricate(0);
+        }
+
         return null;
     }
 
@@ -63,9 +67,21 @@ public class Player implements Fabricator, Trader {
         for (Machine m:machines) {
             String aux = m.getProduction() + "($ " + m.getCashCost() + ")";
         }
-
-
         return options;
+    }
+
+    public void addBMaterials(BaseMaterial baseMaterial,int ammount){
+        int currentAmmount = this.baseMaterials.get(baseMaterial);
+        int updatedAmmount = ammount + currentAmmount;
+        this.baseMaterials.replace(baseMaterial,updatedAmmount);
+    }
+
+    public void addMachine(Machine machine){
+        machines.add(machine);
+    }
+
+    public void addPerson(Person person){
+        crew.addPerson(person);
     }
 
     @Override
@@ -81,7 +97,7 @@ public class Player implements Fabricator, Trader {
             stuff.add((Stuff)item);
         }
         else if(item instanceof BaseMaterial){
-            baseMaterials.put((BaseMaterial) item,1);
+            addBMaterials((BaseMaterial) item,1);
         }
 
     }
