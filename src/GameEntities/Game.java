@@ -178,7 +178,10 @@ public class Game {
             switch (choice){
                 case 1:
                     if(gameState.playerStuffValue() > 0){
-                        !!!!!
+                        if(confirmSellEveryStuff(gameState)){
+                            gameState.playerSellEveryStuff();
+                            PrintConsole.sellConfirmation(gameState.getDailyInfo());
+                        }
                     }
                     break;
                 case 2:
@@ -192,6 +195,22 @@ public class Game {
                 choice = -1;
             }
         }
+    }
+
+    private boolean confirmSellEveryStuff(GameState gameState){
+        int choice = -1;
+        boolean response = false;
+        while (choice == -1){
+            PrintConsole.sellEveryConfirmation(gameState.getDailyInfo(), "Stuff", gameState.playerStuffValue());
+            choice = scanner.nextInt();
+            if (choice == 1){
+                response = true;
+            }
+            else if(choice != 0){
+                choice = -1;
+            }
+        }
+        return response;
     }
 
 
