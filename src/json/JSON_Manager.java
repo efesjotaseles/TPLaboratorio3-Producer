@@ -5,6 +5,8 @@ import ElementClasses.BaseMaterials.Plastic;
 import ElementClasses.BaseMaterials.Wood;
 import ElementClasses.CompositeStuff.Machines.Machine;
 import ElementClasses.Persons.Person;
+import GameEntities.Game;
+import GameEntities.GameState;
 import GameEntities.Player;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -96,5 +98,19 @@ public class JSON_Manager {
             throw new RuntimeException(e);
         }
         return player;
+    }
+
+    public GameState json_toGameState(JSONObject jobj){
+        GameState gameState = new GameState();
+
+        try {
+            gameState.setCurrentDay(jobj.getInt("currentDay"));
+            gameState.setDueDay(jobj.getInt("dueDay"));
+            gameState.setGoalCash(jobj.getInt("goalCash"));
+            gameState.setPlayer(json_toPlayer(jobj.getJSONObject("player")));
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+        return gameState;
     }
 }
