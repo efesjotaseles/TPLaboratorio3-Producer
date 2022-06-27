@@ -1,7 +1,8 @@
 package Interfaces;
 
+import ElementClasses.CompositeStuff.Stuff;
 import ElementClasses.Element;
 
 public interface Fabricator {
-    public Element fabricate();
+    public Stuff fabricate(int option);
 }

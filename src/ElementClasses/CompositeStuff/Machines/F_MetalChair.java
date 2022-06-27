@@ -30,7 +30,7 @@ public class F_MetalChair extends Machine implements Cloneable{
     }
 
     @Override
-    public Element fabricate() {
+    public Stuff fabricate(int option) {
         return new MetalChair();
     }
 

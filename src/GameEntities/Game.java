@@ -212,8 +212,17 @@ public class Game {
     }
 
     private void fabricateGame(GameState gameState){
-
-
+        int choice = -1;
+        while (choice == -1){
+            PrintConsole.fabricateMenu(gameState.getDailyInfo(), gameState.playerFabricateOptions());
+            choice = scanner.nextInt();
+            //NEW ISSUES
+            //How to make an adaptative options with this design....???
+            if(choice != 0){
+                gameState.playerFabricate(choice);
+                choice = -1;
+            }
+        }
     }
 
 

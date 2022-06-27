@@ -52,7 +52,8 @@ public class Player implements Fabricator, Trader {
     }
 
     @Override
-    public Element fabricate() {
+    public Stuff fabricate(int option) {
+        stuff.add(machines.get(option).fabricate(0));
         return null;
     }
 

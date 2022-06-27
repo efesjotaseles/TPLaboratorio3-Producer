@@ -111,6 +111,10 @@ public class GameState {
         return player.fabricateOptions();
     }
 
+    public void playerFabricate(int option){
+        player.fabricate(option);
+    }
+
 
 
 }

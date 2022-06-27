@@ -130,7 +130,21 @@ public class PrintConsole {
         divScreen();
     }
 
-    public static void fabricateMenu(int[] info)
-        
+    public static void fabricateMenu(int[] info, ArrayList<String> options){
+        divScreen();
+        dailyInfo(info);
+        divScreen();
+        if(options.size() > 0){
+            for (int i=0;i<options.size();i++){
+                System.out.println(i + ") " + options.get(i));
+            }
+            System.out.println("0) Go back.");
+        }
+        else {
+            System.out.println("Cannot fabricate anything!");
+        }
+        divScreen();
+    }
+
 
 }

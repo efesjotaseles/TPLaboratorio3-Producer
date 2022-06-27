@@ -4,7 +4,6 @@ import ElementClasses.BaseMaterials.Metal;
 import ElementClasses.CompositeStuff.Furniture.WoodenChair;
 import ElementClasses.CompositeStuff.Stuff;
 import ElementClasses.Element;
-import Interfaces.Fabricator;
 
 import java.util.HashMap;
 
@@ -31,7 +30,7 @@ public class F_WoodenChair extends Machine implements Cloneable{
     }
 
     @Override
-    public Element fabricate() {
+    public Stuff fabricate(int option) {
         return new WoodenChair();
     }
 
