@@ -130,4 +130,7 @@ public class PrintConsole {
         divScreen();
     }
 
+    public static void fabricateMenu(int[] info)
+        
+
 }

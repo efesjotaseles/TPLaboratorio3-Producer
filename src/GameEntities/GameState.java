@@ -3,6 +3,8 @@ package GameEntities;
 import ElementClasses.Element;
 import Interfaces.Trader;
 
+import java.util.ArrayList;
+
 public class GameState {
     private Player player;
     private int currentDay;
@@ -103,6 +105,10 @@ public class GameState {
 
     public void playerSellEveryBMaterial(){
         player.sellEveryBMaterial();
+    }
+
+    public ArrayList<String> playerFabricateOptions(){
+        return player.fabricateOptions();
     }
 
 

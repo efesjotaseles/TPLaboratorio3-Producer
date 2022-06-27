@@ -45,7 +45,7 @@ public class Player implements Fabricator, Trader {
         return crew.getActions();
     }
 
-    private void emtpyBMaterials(){
+    private void emptyBMaterials(){
         baseMaterials.replace(new Wood(),0);
         baseMaterials.replace(new Plastic(),0);
         baseMaterials.replace(new Metal(),0);
@@ -54,6 +54,17 @@ public class Player implements Fabricator, Trader {
     @Override
     public Element fabricate() {
         return null;
+    }
+
+    //TODO a more streamlined way to get and show the composition
+    public ArrayList<String> fabricateOptions(){
+        ArrayList<String> options = new ArrayList<String>();
+        for (Machine m:machines) {
+            String aux = m.getProduction() + "($ " + m.getCashCost() + ")";
+        }
+
+
+        return options;
     }
 
     @Override
@@ -121,12 +132,14 @@ public class Player implements Fabricator, Trader {
 
     public void sellEveryBMaterial(){
         cash += getBMaterialsValue();
-        emtpyBMaterials();
+        emptyBMaterials();
     }
 
+    /*
     public void deployMachine(){
         //Moves a Machine from the Stuff collection to the Machines collection
     }
+     */
 
 
 }
