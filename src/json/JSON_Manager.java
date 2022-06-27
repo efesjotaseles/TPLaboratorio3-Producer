@@ -1,5 +1,6 @@
 package json;
 
+import ElementClasses.BaseMaterials.BaseMaterial;
 import ElementClasses.BaseMaterials.Metal;
 import ElementClasses.BaseMaterials.Plastic;
 import ElementClasses.BaseMaterials.Wood;
@@ -90,10 +91,10 @@ public class JSON_Manager {
     public Player json_toPlayer(JSONObject jobj){
         Player player = new Player();
         try {
-            player.setCash(jobj.getInt("Cash"));
+            player.setCash(jobj.getInt("cash"));
             json_toBaseMaterials(player,jobj.getJSONObject("baseMaterials"));
-            json_toCrew(player,jobj.getJSONArray("Crew"));
-            json_toMachines(player,jobj.getJSONArray("Machines"));
+            json_toCrew(player,jobj.getJSONArray("crew"));
+            json_toMachines(player,jobj.getJSONArray("machines"));
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
@@ -112,5 +113,18 @@ public class JSON_Manager {
             throw new RuntimeException(e);
         }
         return gameState;
+    }
+
+    public JSONObject baseMaterials_toJSON(HashMap<BaseMaterial,Integer> baseMaterials){
+        JSONObject jobj = new JSONObject();
+        try {
+            jobj.put("Wood",baseMaterials.get(new Wood()));
+            jobj.put("Plastic", baseMaterials.get(new Plastic()));
+            jobj.put("Metal",baseMaterials.get(new Metal()));
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+
+        return jobj;
     }
 }

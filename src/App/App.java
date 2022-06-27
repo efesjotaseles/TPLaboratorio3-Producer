@@ -10,52 +10,41 @@ import ElementClasses.BaseMaterials.Metal;
 import ElementClasses.CompositeStuff.Furniture.MetalChair;
 import ElementClasses.Element;
 import GameEntities.Game;
+import GameEntities.GameState;
+import json.JSON_Manager;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class App {
     public static void main(String[] args) {
 
         System.out.println("Hello world!");
         Game game = new Game();
-        game.initGame();
+        String jsonString = "{\n" +
+                "  \"currentDay\" : 1,\n" +
+                "  \"dueDay\" : 30,\n" +
+                "  \"goalCash\" : 300,\n" +
+                "  \"player\" : {\n" +
+                "    \"cash\": 100,\n" +
+                "    \"machines\" : [\"ElementClasses.CompositeStuff.Machines.F_WoodenChair\"],\n" +
+                "    \"crew\" : [\"ElementClasses.Persons.Worker\",\"ElementClasses.Persons.Merchant\"],\n" +
+                "    \"baseMaterials\" : {\n" +
+                "      \"Wood\" : 5,\n" +
+                "      \"Plastic\" : 0,\n" +
+                "      \"Metal\" : 3\n" +
+                "    }\n" +
+                "  }\n" +
+                "}";
 
-
-
-
-        Class c;
-        Object o;
-        BaseMaterial baseMaterial;
-        //Deprecated way
-        /*
+        JSONObject jobj;
         try {
-            c = Class.forName("ElementClasses.BaseMaterials.Metal");
-            o = c.newInstance();
-            baseMaterial = (BaseMaterial) o;
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+            jobj = new JSONObject(jsonString);
+        } catch (JSONException e) {
             throw new RuntimeException(e);
         }
-         */
-
-        /*
-        try {
-            c = Class.forName("ElementClasses.BaseMaterials.Metal");
-            o = c.getDeclaredConstructor().newInstance();
-            baseMaterial = (BaseMaterial) o;
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(e);
-        } catch (InstantiationException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        } catch (NoSuchMethodException e) {
-            throw new RuntimeException(e);
-        }
-         */
-
-        //System.out.println(baseMaterial.toString());
-
-
+        JSON_Manager json_manager = new JSON_Manager();
+        GameState gameState = json_manager.json_toGameState(jobj);
+        PrintConsole.dailyInfo(gameState.getDailyInfo());
 
 
     }
