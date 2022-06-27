@@ -89,6 +89,22 @@ public class GameState {
         return player.getMachinesValue();
     }
 
+    public int[] playerValues(){
+        return new int[]{playerStuffValue(),playerBMaterialsValue(),playerMachinesValue()};
+    }
+
+    public void playerSellEveryStuff(){
+        player.sellEveryStuff();
+    }
+
+    public void playerSellEveryMachine(){
+        player.sellEveryMachine();
+    }
+
+    public void playerSellEveryBMaterial(){
+        player.sellEveryBMaterial();
+    }
+
 
 
 }

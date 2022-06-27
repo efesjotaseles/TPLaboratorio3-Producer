@@ -45,7 +45,11 @@ public class Player implements Fabricator, Trader {
         return crew.getActions();
     }
 
-
+    private void emtpyBMaterials(){
+        baseMaterials.replace(new Wood(),0);
+        baseMaterials.replace(new Plastic(),0);
+        baseMaterials.replace(new Metal(),0);
+    }
 
     @Override
     public Element fabricate() {
@@ -103,6 +107,21 @@ public class Player implements Fabricator, Trader {
         }
 
         return result;
+    }
+
+    public void sellEveryStuff(){
+        cash += getStuffValue();
+        stuff.clear();
+    }
+
+    public void sellEveryMachine(){
+        cash += getMachinesValue();
+        machines.clear();
+    }
+
+    public void sellEveryBMaterial(){
+        cash += getBMaterialsValue();
+        emtpyBMaterials();
     }
 
     public void deployMachine(){

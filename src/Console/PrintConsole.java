@@ -101,12 +101,33 @@ public class PrintConsole {
 
     }
 
-    public static void marketSellMenu(int[] info){
+    public static void marketSellMenu(int[] info, int[] values){
         divScreen();
         dailyInfo(info);
         divScreen();
-        System.out.println("1) Sell every item (except base materials)");
+        System.out.println("1) Sell all your production ($ " + values[0] + ")");
+        System.out.println("2) Sell all your materials. ($ " + values[1] + ")");
+        System.out.println("3) Sell all your machines. ($ " + values[2] + ")");
         System.out.println("0) Go back");
+    }
+
+    public static void sellEveryConfirmation(int[] info, String message , int value){
+        divScreen();
+        dailyInfo(info);
+        divScreen();
+        System.out.println("Sure to sell every " + message + "?");
+        System.out.println("Value: $ " + value);
+        System.out.println("1) YES!");
+        System.out.println("0) No.");
+        divScreen();
+    }
+
+    public static void sellConfirmation(int[] info){
+        divScreen();
+        dailyInfo(info);
+        divScreen();
+        System.out.println("Sale confirmed!!!");
+        divScreen();
     }
 
 }

@@ -171,16 +171,27 @@ public class Game {
 
     public void marketSellGame(GameState gameState){
         //For simplicity sake, for now the options will be to sell every stuff on inventory
-        /*
-        In each case, the total value of the item should be shown
-        1) Sell all your production
-        2) Sell all your base materials
-        3) Sell all your machines
-        After selecting the option, a confirmation should be shown
-
-        0) Go back
-         */
-
+        int choice = -1;
+        while (choice != 0){
+            PrintConsole.marketSellMenu(gameState.getDailyInfo(), gameState.playerValues());
+            choice = scanner.nextInt();
+            switch (choice){
+                case 1:
+                    if(gameState.playerStuffValue() > 0){
+                        !!!!!
+                    }
+                    break;
+                case 2:
+                    //2) Sell all your base materials
+                    break;
+                case 3:
+                    //3) Sell all your machines
+                    break;
+            }
+            if(choice != 0){
+                choice = -1;
+            }
+        }
     }
 
 
