@@ -38,6 +38,7 @@ public class Game {
         }
     }
 
+    //Consider to remove the parameters of gameState, since its a Class attribute
     public void dailyGame(GameState gameState){
         int choice = -1;
         while (choice != 0){
@@ -48,7 +49,7 @@ public class Game {
                     marketGame(gameState);
                     break;
                 case 2:
-                    //Fabricate
+                    fabricateGame(gameState);
                     break;
                 case 3:
                     //Manage machines
@@ -79,10 +80,7 @@ public class Game {
                     marketBuyGame(gameState);
                     break;
                 case 2:
-                    //Sell menu
-                    break;
-                case 0:
-                    //GOES BACK
+                    marketSellGame(gameState);
                     break;
             }
             if(choice != 0) {
@@ -211,6 +209,10 @@ public class Game {
             }
         }
         return response;
+    }
+
+    private void fabricateGame(GameState gameState){
+
     }
 
 
