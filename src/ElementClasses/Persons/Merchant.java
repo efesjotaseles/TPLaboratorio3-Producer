@@ -33,6 +33,11 @@ public class Merchant extends Person implements Trader, Cloneable{
     }
 
     @Override
+    public String toString() {
+        return "Merchant";
+    }
+
+    @Override
     public String toJSON() {
         return "ElementClasses.Persons.Merchant";
     }

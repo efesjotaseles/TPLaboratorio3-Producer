@@ -66,6 +66,7 @@ public class PrintConsole {
             if(offer[i] != null) {
                 names[i] = offer[i].toString();
                 values[i] = offer[i].getValue();
+                System.out.println(")");
             }
             else{
                 names[i] = "** no item **";
@@ -136,7 +137,8 @@ public class PrintConsole {
         divScreen();
         if(options.size() > 0){
             for (int i=0;i<options.size();i++){
-                System.out.println(i + ") " + options.get(i));
+                int pos = i+1;
+                System.out.println(pos + ") " + options.get(i));
             }
             System.out.println("0) Go back.");
         }

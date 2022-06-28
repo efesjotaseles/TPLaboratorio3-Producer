@@ -7,13 +7,14 @@ import java.nio.file.Paths;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 
 public class JsonUtiles {
-    public static void grabar(JSONArray array) {
+    public static void grabar(JSONObject jobj, String fileName) {
         try {
-            FileWriter file = new FileWriter("test.json");
-            file.write(array.toString());
+            FileWriter file = new FileWriter(fileName);
+            file.write(jobj.toString());
             file.flush();
             file.close();
 
@@ -22,12 +23,12 @@ public class JsonUtiles {
         }
     }
 
-    public static String leer()
+    public static String leer(String fileName)
     {
         String contenido = "";
         try
         {
-            contenido = new String(Files.readAllBytes(Paths.get("test.json")));
+            contenido = new String(Files.readAllBytes(Paths.get(fileName)));
         }
         catch (IOException e)
         {

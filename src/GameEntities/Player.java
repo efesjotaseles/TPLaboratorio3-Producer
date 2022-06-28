@@ -66,7 +66,8 @@ public class Player implements Fabricator, Trader {
     @Override
     public Stuff fabricate(int option) {
         if(crew.canFabricate()){
-            stuff.add(machines.get(option).fabricate(0));
+            stuff.add(machines.get(option-1).fabricate(0));
+            cash -= machines.get(option-1).getCashCost();
             crew.fabricate(0);
         }
 
@@ -78,6 +79,7 @@ public class Player implements Fabricator, Trader {
         ArrayList<String> options = new ArrayList<String>();
         for (Machine m:machines) {
             String aux = m.getProduction() + "($ " + m.getCashCost() + ")";
+            options.add(aux);
         }
         return options;
     }

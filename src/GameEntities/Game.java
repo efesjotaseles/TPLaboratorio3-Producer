@@ -2,6 +2,10 @@ package GameEntities;
 
 import Console.PrintConsole;
 import ElementClasses.Element;
+import json.JSON_Manager;
+import json.JsonUtiles;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.Scanner;
 
@@ -9,11 +13,15 @@ public class Game {
     private GameState gameState;
     private Market market;
     private Scanner scanner;
+    private JSON_Manager json_manager;
+    JSONObject jobj;
 
     public Game() {
         gameState = new GameState();
         market = new Market();
         scanner = new Scanner(System.in);
+        json_manager = new JSON_Manager();
+        jobj = new JSONObject();
     }
 
     public void initGame(){
@@ -29,6 +37,14 @@ public class Game {
                 case 2:
                     market.renewOffer();
                     //Start new game from default json
+                    try {
+                        jobj = new JSONObject(JsonUtiles.leer("defaultGameState.json"));
+                        gameState = json_manager.json_toGameState(jobj);
+                        dailyGame(gameState);
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+
                     break;
 
             }
@@ -101,7 +117,7 @@ public class Game {
                             //As is now, it prints the daily info previous to perform the purchase.
                             //TODO Perform the itemPurchased() with the updated info
                             PrintConsole.itemPurchased(gameState.getDailyInfo(),market.getMaterialA());
-                            gameState.tradeOperation(market,gameState.getPlayer(),market.getMaterialA());
+                            gameState.tradeOperation(gameState.getPlayer(),market, market.getMaterialA());
                         }
                     }
                     break;
