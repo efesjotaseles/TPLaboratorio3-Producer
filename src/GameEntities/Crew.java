@@ -73,6 +73,12 @@ public class Crew implements Fabricator,Trader{
         return getFabricatorActionsTaken()<getFabricatorActionsLimit();
     }
 
+    public void resetActions(){
+        for (Person p:persons) {
+            p.setActionsTaken(0);
+        }
+    }
+
     @Override
     public Stuff fabricate(int option) {
         boolean done = false;

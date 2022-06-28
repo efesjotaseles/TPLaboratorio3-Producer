@@ -45,6 +45,10 @@ public class Player implements Fabricator, Trader {
         return crew.getActions();
     }
 
+    public void resetActions(){
+        crew.resetActions();
+    }
+
     public HashMap<BaseMaterial,Integer> getBaseMaterials(){
         return baseMaterials;
     }

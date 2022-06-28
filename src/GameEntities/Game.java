@@ -81,6 +81,7 @@ public class Game {
                 case 4:
                     //End the day
                     gameState.finishDay();
+                    market.renewOffer();
                     if(gameState.getCurrentDay()> gameState.getDueDay()){
                         //Bank takes the factory!
                         PrintConsole.pastDueDay(gameState.getDailyInfo());

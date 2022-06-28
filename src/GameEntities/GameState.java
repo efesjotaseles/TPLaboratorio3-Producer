@@ -67,6 +67,7 @@ public class GameState {
 
     public void finishDay(){
         currentDay += 1;
+        resetPlayerActions();
     }
 
     public void tradeOperation(Trader buyer , Trader seller, Element item){
@@ -117,6 +118,10 @@ public class GameState {
 
     public void playerFabricate(int option){
         player.fabricate(option);
+    }
+
+    private void resetPlayerActions(){
+        player.resetActions();
     }
 
 
