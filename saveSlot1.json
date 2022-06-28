@@ -1,1 +1,1 @@
-{"goalCash":300,"currentDay":30,"dueDay":30,"player":{"baseMaterials":{"Wood":5,"Plastic":0,"Metal":3},"machines":["ElementClasses.CompositeStuff.Machines.F_WoodenChair","ElementClasses.CompositeStuff.Machines.F_MetalChair"],"cash":38,"crew":["ElementClasses.Persons.Worker","ElementClasses.Persons.Merchant"]}}
+{"goalCash":300,"currentDay":1,"dueDay":30,"player":{"baseMaterials":{"Wood":5,"Plastic":0,"Metal":3},"machines":["ElementClasses.CompositeStuff.Machines.F_WoodenChair"],"cash":100,"crew":["ElementClasses.Persons.Worker","ElementClasses.Persons.Merchant"]}}

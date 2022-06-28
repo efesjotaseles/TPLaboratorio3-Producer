@@ -50,6 +50,7 @@ public class PrintConsole {
         System.out.println("1) Buy...");
         System.out.println("2) Sell...");
         System.out.println("0) Go back");
+        divScreen();
     }
 
     /**
