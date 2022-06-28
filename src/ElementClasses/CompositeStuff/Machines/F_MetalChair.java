@@ -43,4 +43,9 @@ public class F_MetalChair extends Machine implements Cloneable{
     public String toString() {
         return "Fabricator of Metal Chair";
     }
+
+    @Override
+    public String toJSON(){
+        return "ElementClasses.CompositeStuff.Machines.F_MetalChair";
+    }
 }

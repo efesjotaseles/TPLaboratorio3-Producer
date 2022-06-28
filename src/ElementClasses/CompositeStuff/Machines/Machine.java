@@ -27,4 +27,8 @@ public abstract class Machine extends Stuff implements Fabricator, Cloneable {
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
+
+    public String toJSON(){
+        return null;
+    }
 }

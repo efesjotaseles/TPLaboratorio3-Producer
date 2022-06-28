@@ -24,4 +24,9 @@ public class Worker extends Person implements Fabricator, Cloneable{
     public Object clone() throws CloneNotSupportedException {
         return new Worker();
     }
+
+    @Override
+    public String toJSON() {
+        return "ElementClasses.Persons.Worker";
+    }
 }

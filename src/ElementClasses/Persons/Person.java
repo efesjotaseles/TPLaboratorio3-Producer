@@ -47,4 +47,8 @@ public abstract class Person extends Element implements Cloneable{
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
+
+    public String toJSON(){
+        return null;
+    }
 }

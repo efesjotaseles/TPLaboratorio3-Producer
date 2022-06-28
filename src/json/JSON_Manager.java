@@ -6,6 +6,7 @@ import ElementClasses.BaseMaterials.Plastic;
 import ElementClasses.BaseMaterials.Wood;
 import ElementClasses.CompositeStuff.Machines.Machine;
 import ElementClasses.Persons.Person;
+import GameEntities.Crew;
 import GameEntities.Game;
 import GameEntities.GameState;
 import GameEntities.Player;
@@ -14,6 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class JSON_Manager {
@@ -121,6 +123,52 @@ public class JSON_Manager {
             jobj.put("Wood",baseMaterials.get(new Wood()));
             jobj.put("Plastic", baseMaterials.get(new Plastic()));
             jobj.put("Metal",baseMaterials.get(new Metal()));
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+
+        return jobj;
+    }
+
+    public JSONArray machines_toJSON(ArrayList<Machine> machines){
+        JSONArray jarray = new JSONArray();
+        for (Machine m:machines) {
+            jarray.put(m.toJSON());
+        }
+        return jarray;
+    }
+
+    public JSONArray crew_toJSON(Crew crew){
+        JSONArray jarray = new JSONArray();
+        ArrayList<Person> persons = crew.getPersons();
+        for (Person p:persons) {
+            jarray.put(p.toJSON());
+        }
+
+        return jarray;
+    }
+
+    public JSONObject player_toJSON(Player player){
+        JSONObject jobj = new JSONObject();
+        try {
+            jobj.put("cash",player.getCash());
+            jobj.put("crew",crew_toJSON(player.getCrew()));
+            jobj.put("machines",machines_toJSON(player.getMachines()));
+            jobj.put("baseMaterials",baseMaterials_toJSON(player.getBaseMaterials()));
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+
+        return jobj;
+    }
+
+    public JSONObject gameState_toJSON(GameState gameState){
+        JSONObject jobj = new JSONObject();
+        try {
+            jobj.put("currentDay",gameState.getCurrentDay());
+            jobj.put("dueDay",gameState.getDueDay());
+            jobj.put("goalCash",gameState.getGoalCash());
+            jobj.put("player", player_toJSON(gameState.getPlayer()));
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }

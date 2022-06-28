@@ -48,4 +48,9 @@ public class F_WoodenChair extends Machine implements Cloneable{
     public String toString() {
         return "Fabricator of Wooden Chair";
     }
+
+    @Override
+    public String toJSON(){
+        return "ElementClasses.CompositeStuff.Machines.F_WoodenChair";
+    }
 }

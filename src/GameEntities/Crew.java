@@ -15,6 +15,10 @@ public class Crew implements Fabricator,Trader{
         persons = new ArrayList<Person>();
     }
 
+    public ArrayList<Person> getPersons(){
+        return persons;
+    }
+
     public void addPerson(Person person){
         persons.add(person);
     }

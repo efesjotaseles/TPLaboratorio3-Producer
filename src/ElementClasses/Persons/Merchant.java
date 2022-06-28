@@ -31,4 +31,9 @@ public class Merchant extends Person implements Trader, Cloneable{
     public Object clone() throws CloneNotSupportedException {
         return new Merchant();
     }
+
+    @Override
+    public String toJSON() {
+        return "ElementClasses.Persons.Merchant";
+    }
 }

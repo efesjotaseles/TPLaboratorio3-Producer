@@ -45,6 +45,18 @@ public class Player implements Fabricator, Trader {
         return crew.getActions();
     }
 
+    public HashMap<BaseMaterial,Integer> getBaseMaterials(){
+        return baseMaterials;
+    }
+
+    public ArrayList<Machine> getMachines(){
+        return machines;
+    }
+
+    public Crew getCrew(){
+        return crew;
+    }
+
     private void emptyBMaterials(){
         baseMaterials.replace(new Wood(),0);
         baseMaterials.replace(new Plastic(),0);
@@ -70,10 +82,10 @@ public class Player implements Fabricator, Trader {
         return options;
     }
 
-    public void addBMaterials(BaseMaterial baseMaterial,int ammount){
-        int currentAmmount = this.baseMaterials.get(baseMaterial);
-        int updatedAmmount = ammount + currentAmmount;
-        this.baseMaterials.replace(baseMaterial,updatedAmmount);
+    public void addBMaterials(BaseMaterial baseMaterial,int amount){
+        int currentAmount = this.baseMaterials.get(baseMaterial);
+        int updatedAmount = amount + currentAmount;
+        this.baseMaterials.replace(baseMaterial,updatedAmount);
     }
 
     public void addMachine(Machine machine){
