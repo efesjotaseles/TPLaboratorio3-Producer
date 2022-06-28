@@ -108,9 +108,10 @@ public class PrintConsole {
         dailyInfo(info);
         divScreen();
         System.out.println("1) Sell all your production ($ " + values[0] + ")");
-        System.out.println("2) Sell all your materials. ($ " + values[1] + ")");
-        System.out.println("3) Sell all your machines. ($ " + values[2] + ")");
+        System.out.println("2) Sell all your materials [not available] ($ " + values[1] + ")");
+        System.out.println("3) Sell all your machines. [not available]($ " + values[2] + ")");
         System.out.println("0) Go back");
+        divScreen();
     }
 
     public static void sellEveryConfirmation(int[] info, String message , int value){
