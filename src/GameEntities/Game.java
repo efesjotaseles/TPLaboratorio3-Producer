@@ -33,6 +33,14 @@ public class Game {
                 case 1:
                     market.renewOffer();
                     //Continue previous game from saved json
+                    try {
+                        jobj = new JSONObject(JsonUtiles.leer("saveSlot1.json"));
+                        gameState = json_manager.json_toGameState(jobj);
+                        dailyGame(gameState);
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+
                     break;
                 case 2:
                     market.renewOffer();
@@ -72,12 +80,21 @@ public class Game {
                     break;
                 case 4:
                     //End the day
+                    gameState.finishDay();
+                    if(gameState.getCurrentDay()> gameState.getDueDay()){
+                        //Bank takes the factory!
+                        PrintConsole.pastDueDay(gameState.getDailyInfo());
+                        choice = 0;
+                    }
                     break;
                 case 5:
                     //Pay debt!
+                    payDebtGame(gameState);
                     break;
                 case 0:
                     //Save gameState into JSON, and exit loop
+                    jobj = json_manager.gameState_toJSON(gameState);
+                    JsonUtiles.grabar(jobj,"saveSlot1.json");
                     break;
             }
             if (choice != 0){
@@ -237,6 +254,28 @@ public class Game {
             if(choice != 0){
                 gameState.playerFabricate(choice);
                 choice = -1;
+            }
+        }
+    }
+
+    private void payDebtGame(GameState gameState){
+        int choice = -1;
+        while (choice != 0){
+            PrintConsole.payDebtMenu(gameState);
+            if(gameState.getPlayer().getCash()>=gameState.getGoalCash()){
+                choice = scanner.nextInt();
+                if (choice == 1){
+                    //pay debt
+                    gameState.getPlayer().setCash(gameState.getPlayer().getCash()-gameState.getGoalCash());
+                    PrintConsole.winGame(gameState.getDailyInfo());
+                    choice = 0;
+                }
+                else if(choice != 0){
+                    choice = -1;
+                }
+            }
+            else{
+                choice = 0;
             }
         }
     }

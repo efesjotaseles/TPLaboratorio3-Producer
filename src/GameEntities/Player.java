@@ -101,6 +101,7 @@ public class Player implements Fabricator, Trader {
     @Override
     public void buy(Element item, int cash) {
         this.cash -= cash;
+        crew.trade();
         if(item instanceof Person){
             crew.addPerson((Person) item);
         }
@@ -152,6 +153,7 @@ public class Player implements Fabricator, Trader {
     }
 
     public void sellEveryStuff(){
+        crew.trade();
         cash += getStuffValue();
         stuff.clear();
     }

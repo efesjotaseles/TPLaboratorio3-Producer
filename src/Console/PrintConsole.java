@@ -1,6 +1,7 @@
 package Console;
 
 import ElementClasses.Element;
+import GameEntities.GameState;
 
 import java.util.ArrayList;
 
@@ -35,7 +36,7 @@ public class PrintConsole {
         divScreen();
         System.out.println("1) Market (" + actions[0] + "/" + actions[1] + ")");
         System.out.println("2) Fabricate (" + actions[2] + "/" + actions[3] + ")");
-        System.out.println("3) Manage Machines");
+        System.out.println("3) Manage Machines [not available]");
         System.out.println("4) End the day");
         System.out.println("5) Pay debt!");
         System.out.println("0) Save & Close");
@@ -66,7 +67,6 @@ public class PrintConsole {
             if(offer[i] != null) {
                 names[i] = offer[i].toString();
                 values[i] = offer[i].getValue();
-                System.out.println(")");
             }
             else{
                 names[i] = "** no item **";
@@ -145,6 +145,39 @@ public class PrintConsole {
         else {
             System.out.println("Cannot fabricate anything!");
         }
+        divScreen();
+    }
+
+    public static void payDebtMenu(GameState gameState){
+        divScreen();
+        dailyInfo(gameState.getDailyInfo());
+        divScreen();
+        if(gameState.getPlayer().getCash()< gameState.getGoalCash()){
+            System.out.println("You don't have enough money to pay the debt....");
+        }
+        else {
+            System.out.println("It seems you can pay your debt!");
+            System.out.println("1) PAY DEBT NOW!!!");
+            System.out.println("0) Not now...");
+        }
+        divScreen();
+    }
+
+    public static void winGame(int[] info){
+        divScreen();
+        dailyInfo(info);
+        divScreen();
+        System.out.println("CONGRATULATIONS!!!!!");
+        System.out.println("YOU PAYED YOUR DEBT!!!!");
+        divScreen();
+    }
+
+    public static void pastDueDay(int[] info){
+        divScreen();
+        dailyInfo(info);
+        divScreen();
+        System.out.println("...you went beyond due day without paying your debt...");
+        System.out.println("The Bank takes control of your factory :(");
         divScreen();
     }
 

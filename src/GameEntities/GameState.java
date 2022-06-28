@@ -65,6 +65,10 @@ public class GameState {
         return player.getActions();
     }
 
+    public void finishDay(){
+        currentDay += 1;
+    }
+
     public void tradeOperation(Trader buyer , Trader seller, Element item){
         Element copy = null;
         try {

@@ -85,7 +85,7 @@ public class Crew implements Fabricator,Trader{
         return null;
     }
 
-    private void trade(){
+    public void trade(){
         boolean done = false;
         for (Person p:persons) {
             if(p instanceof Trader && p.hasActions() && !done){
