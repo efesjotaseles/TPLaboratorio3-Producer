@@ -107,6 +107,7 @@ public class Player implements Fabricator, Trader {
         }
         else if(item instanceof Machine){
             //TODO add item to machines, wrapper????
+            machines.add((Machine) item);
         }
         else if(item instanceof Stuff){
             stuff.add((Stuff)item);

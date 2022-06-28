@@ -145,7 +145,7 @@ public class Game {
                             //As is now, it prints the daily info previous to perform the purchase.
                             //TODO Perform the itemPurchased() with the updated info
                             PrintConsole.itemPurchased(gameState.getDailyInfo(), market.getMaterialB());
-                            gameState.tradeOperation(market,gameState.getPlayer(),market.getMaterialB());
+                            gameState.tradeOperation(gameState.getPlayer(),market,market.getMaterialB());
                         }
                     }
                     break;
@@ -156,7 +156,7 @@ public class Game {
                             //As is now, it prints the daily info previous to perform the purchase.
                             //TODO Perform the itemPurchased() with the updated info
                             PrintConsole.itemPurchased(gameState.getDailyInfo(), market.getMachine());
-                            gameState.tradeOperation(market,gameState.getPlayer(),market.getMachine());
+                            gameState.tradeOperation(gameState.getPlayer(),market,market.getMachine());
                         }
                     }
                     break;
@@ -167,7 +167,7 @@ public class Game {
                             //As is now, it prints the daily info previous to perform the purchase.
                             //TODO Perform the itemPurchased() with the updated info
                             PrintConsole.itemPurchased(gameState.getDailyInfo(), market.getPerson());
-                            gameState.tradeOperation(market,gameState.getPlayer(),market.getPerson());
+                            gameState.tradeOperation(gameState.getPlayer(),market,market.getPerson());
                         }
                     }
                     break;
